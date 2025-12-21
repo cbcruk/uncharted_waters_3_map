@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-parchment: #f9f3e3;
+  --color-parchment-bg: #f4e4bc;
+  --color-brown-dark: #4a3728;
+  --color-brown-medium: #5a4a3a;
+  --color-brown-light: #8b7355;
+  --color-gold: #c9a959;
+  --color-cream: #fff8e7;
+  --color-saddle: #8b4513;
+  --color-blue-dark: #2c5282;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Serif KR', Georgia, serif;
+  background: var(--color-parchment-bg);
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply bg-parchment border-2 border-brown-light rounded shadow-lg;
+}
+
+.leaflet-popup-content {
+  @apply m-3 text-sm leading-relaxed;
+}
+
+.custom-marker {
+  @apply bg-transparent border-none;
+}
+
+.city-name-marker {
+  @apply inline-flex items-center gap-1 rounded-lg px-1.5 py-0.5 text-xs font-semibold shadow transition-all duration-150 whitespace-nowrap;
+}
+
+.city-name-marker:hover {
+  @apply bg-white/95 shadow-md scale-105;
+}
+
+.city-name-marker .city-name {
+  @apply text-white;
+}
+
+.city-name-marker .city-icons {
+  @apply text-[10px] ml-0.5;
+}
