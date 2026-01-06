@@ -79,7 +79,10 @@ export function CityPopup({ city }: CityPopupProps) {
               <li key={idx} className="py-0.5 text-brown-medium">
                 <span className="text-blue-dark">{book.name}</span>
                 {book.hintDiscovery && (
-                  <span className="text-brown-light text-[11px]"> → {book.hintDiscovery}</span>
+                  <span className="text-brown-light text-[11px]">
+                    {' '}
+                    → {book.hintDiscovery}
+                  </span>
                 )}
               </li>
             ))}

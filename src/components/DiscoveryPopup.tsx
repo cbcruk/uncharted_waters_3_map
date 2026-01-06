@@ -34,9 +34,7 @@ export function DiscoveryPopup({ discovery }: DiscoveryPopupProps) {
           "{hint}"
         </div>
       )}
-      {condition && (
-        <div className="text-saddle mt-2 text-xs">{condition}</div>
-      )}
+      {condition && <div className="text-saddle mt-2 text-xs">{condition}</div>}
     </div>
   )
 }

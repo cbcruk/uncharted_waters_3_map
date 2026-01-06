@@ -73,7 +73,10 @@ export function FilterPanel({
         <>
           <div>
             {regions.map((region) => (
-              <label key={region} className="flex items-center my-1.5 cursor-pointer">
+              <label
+                key={region}
+                className="flex items-center my-1.5 cursor-pointer"
+              >
                 <input
                   type="checkbox"
                   className="mr-2"
@@ -91,7 +94,8 @@ export function FilterPanel({
             ))}
           </div>
           <div className="mt-4 pt-2.5 border-t border-gold text-xs text-brown-medium">
-            표시 중: <strong>{visibleDiscoveryCount}</strong> / {totalDiscoveryCount} 발견물
+            표시 중: <strong>{visibleDiscoveryCount}</strong> /{' '}
+            {totalDiscoveryCount} 발견물
           </div>
         </>
       ) : (
@@ -104,12 +108,17 @@ export function FilterPanel({
                 checked={showCities}
                 onChange={onToggleCities}
               />
-              <span className="text-brown-dark text-[13px] font-bold">도시 마커 표시</span>
+              <span className="text-brown-dark text-[13px] font-bold">
+                도시 마커 표시
+              </span>
             </label>
           </div>
           <div>
             {cityRegions.map((region) => (
-              <label key={region} className="flex items-center my-1.5 cursor-pointer">
+              <label
+                key={region}
+                className="flex items-center my-1.5 cursor-pointer"
+              >
                 <input
                   type="checkbox"
                   className="mr-2"
@@ -121,7 +130,11 @@ export function FilterPanel({
                   className="w-3.5 h-3.5 rounded-sm mr-2 border border-gray-500"
                   style={{ backgroundColor: cityRegionColors[region] }}
                 />
-                <span className={`text-[13px] ${showCities ? 'text-brown-dark' : 'text-brown-dark/50'}`}>
+                <span
+                  className={`text-[13px] ${
+                    showCities ? 'text-brown-dark' : 'text-brown-dark/50'
+                  }`}
+                >
                   {region} ({getCityRegionCount(region)})
                 </span>
               </label>
