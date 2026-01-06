@@ -26,7 +26,7 @@ function App() {
   })
 
   const [showLabels, setShowLabels] = useState(false)
-  const [showCities, setShowCities] = useState(false)
+  const [showCities, setShowCities] = useState(true)
 
   const handleToggle = (region: string) => {
     setVisibility((prev) => ({
