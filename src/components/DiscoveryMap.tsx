@@ -33,7 +33,7 @@ export function DiscoveryMap({
       style={{ width: '100%', height: '100vh' }}
     >
       <TileLayer
-        url={TILE_URLS.watercolor}
+        url={TILE_URLS.base}
         attribution={TILE_ATTRIBUTION}
         maxZoom={MAP_CONFIG.maxZoom}
       />
