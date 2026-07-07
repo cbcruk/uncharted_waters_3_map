@@ -1,15 +1,14 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-parchment: #f9f3e3;
-  --color-parchment-bg: #f4e4bc;
-  --color-brown-dark: #4a3728;
-  --color-brown-medium: #5a4a3a;
-  --color-brown-light: #8b7355;
-  --color-gold: #c9a959;
-  --color-cream: #fff8e7;
-  --color-saddle: #8b4513;
-  --color-blue-dark: #2c5282;
+  --color-surface: #0f172a;
+  --color-surface-2: #1e293b;
+  --color-border: #334155;
+  --color-fg: #e2e8f0;
+  --color-fg-muted: #94a3b8;
+  --color-fg-subtle: #64748b;
+  --color-accent: #94a3b8;
+  --color-link: #7dd3fc;
 }
 
 * {
@@ -20,7 +19,7 @@
 
 body {
   font-family: 'Noto Serif KR', Georgia, serif;
-  background: var(--color-parchment-bg);
+  background: #0b0f17;
 }
 
 #root {
@@ -28,30 +27,10 @@ body {
   height: 100vh;
 }
 
-.leaflet-popup-content-wrapper {
-  @apply bg-parchment border-2 border-brown-light rounded shadow-lg;
+.maplibregl-popup-content {
+  @apply bg-surface/95 border border-border rounded-md shadow-xl p-3 text-sm leading-relaxed text-fg backdrop-blur-sm;
 }
 
-.leaflet-popup-content {
-  @apply m-3 text-sm leading-relaxed;
-}
-
-.custom-marker {
-  @apply bg-transparent border-none;
-}
-
-.city-name-marker {
-  @apply inline-flex items-center gap-1 rounded-lg px-1.5 py-0.5 text-xs font-semibold shadow transition-all duration-150 whitespace-nowrap;
-}
-
-.city-name-marker:hover {
-  @apply bg-white/95 shadow-md scale-105;
-}
-
-.city-name-marker .city-name {
-  @apply text-white;
-}
-
-.city-name-marker .city-icons {
-  @apply text-[10px] ml-0.5;
+.maplibregl-popup-tip {
+  @apply hidden;
 }
