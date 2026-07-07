@@ -18,7 +18,7 @@ export function DiscoveryMap({
 
   return (
     <Map
-      theme="light"
+      theme="dark"
       projection={MAP_CONFIG.projection}
       center={MAP_CONFIG.center}
       zoom={MAP_CONFIG.zoom}

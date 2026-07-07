@@ -59,10 +59,10 @@ export function CityLayer({ cityVisibility, onSelect }: CityLayerProps) {
       source: SOURCE_ID,
       filter: ['has', 'point_count'],
       paint: {
-        'circle-color': '#5a4a3a',
-        'circle-opacity': 0.9,
+        'circle-color': '#475569',
+        'circle-opacity': 0.92,
         'circle-stroke-width': 1.5,
-        'circle-stroke-color': '#f9f3e3',
+        'circle-stroke-color': '#cbd5e1',
         'circle-radius': ['step', ['get', 'point_count'], 16, 10, 20, 50, 26],
       },
     })
@@ -77,7 +77,7 @@ export function CityLayer({ cityVisibility, onSelect }: CityLayerProps) {
         'text-font': TEXT_FONT,
         'text-size': 12,
       },
-      paint: { 'text-color': '#f9f3e3' },
+      paint: { 'text-color': '#f1f5f9' },
     })
 
     map.addLayer({

@@ -39,12 +39,12 @@ export function CityPopup({ city }: CityPopupProps) {
 
   return (
     <div>
-      <div className="text-lg font-bold text-brown-dark border-b-2 border-gold pb-1.5 mb-2.5 pr-6">
+      <div className="text-lg font-bold text-fg border-b border-border pb-1.5 mb-2.5 pr-6">
         {name}
       </div>
-      <div className="text-brown-light text-xs mb-2">{region}</div>
+      <div className="text-fg-subtle text-xs mb-2">{region}</div>
 
-      <div className="text-brown-medium [&_strong]:text-brown-dark">
+      <div className="text-fg-muted [&_strong]:text-fg">
         <strong>좌표:</strong> {lat >= 0 ? '북위' : '남위'} {Math.abs(lat)}°,{' '}
         {lng >= 0 ? '동경' : '서경'} {Math.abs(lng)}°
         {specialProduct && (
@@ -70,16 +70,16 @@ export function CityPopup({ city }: CityPopupProps) {
       </div>
 
       {availableBooks.length > 0 && (
-        <div className="mt-3 pt-2.5 border-t border-gray-300">
-          <div className="text-[13px] font-bold text-brown-dark mb-1.5">
+        <div className="mt-3 pt-2.5 border-t border-border">
+          <div className="text-[13px] font-bold text-fg mb-1.5">
             열람 가능한 도서 ({availableBooks.length}권)
           </div>
           <ul className="list-none p-0 m-0 text-xs">
             {availableBooks.slice(0, 5).map((book, idx) => (
-              <li key={idx} className="py-0.5 text-brown-medium">
-                <span className="text-blue-dark">{book.name}</span>
+              <li key={idx} className="py-0.5 text-fg-muted">
+                <span className="text-link">{book.name}</span>
                 {book.hintDiscovery && (
-                  <span className="text-brown-light text-[11px]">
+                  <span className="text-fg-subtle text-[11px]">
                     {' '}
                     → {book.hintDiscovery}
                   </span>
@@ -87,7 +87,7 @@ export function CityPopup({ city }: CityPopupProps) {
               </li>
             ))}
             {availableBooks.length > 5 && (
-              <li className="text-brown-light italic py-0.5">
+              <li className="text-fg-subtle italic py-0.5">
                 ...외 {availableBooks.length - 5}권
               </li>
             )}
@@ -96,16 +96,16 @@ export function CityPopup({ city }: CityPopupProps) {
       )}
 
       {cityDiscoveries.length > 0 && (
-        <div className="mt-3 pt-2.5 border-t border-gray-300">
-          <div className="text-[13px] font-bold text-brown-dark mb-1.5">
+        <div className="mt-3 pt-2.5 border-t border-border">
+          <div className="text-[13px] font-bold text-fg mb-1.5">
             이 도시의 발견물 ({cityDiscoveries.length}개)
           </div>
           <ul className="list-none p-0 m-0 text-xs">
             {cityDiscoveries.map((discovery, idx) => (
-              <li key={idx} className="py-0.5 text-brown-medium">
-                <span className="text-brown-dark">{discovery.name}</span>
+              <li key={idx} className="py-0.5 text-fg-muted">
+                <span className="text-fg">{discovery.name}</span>
                 {discovery.evidence && (
-                  <span className="text-brown-light text-[11px]">
+                  <span className="text-fg-subtle text-[11px]">
                     {' '}
                     ({discovery.evidence})
                   </span>
