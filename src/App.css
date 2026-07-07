@@ -28,38 +28,10 @@ body {
   height: 100vh;
 }
 
-.leaflet-popup-content-wrapper {
-  @apply bg-parchment border-2 border-brown-light rounded shadow-lg;
+.maplibregl-popup-content {
+  @apply bg-parchment border-2 border-brown-light rounded shadow-lg p-3 text-sm leading-relaxed;
 }
 
-.leaflet-popup-content {
-  @apply m-3 text-sm leading-relaxed;
-}
-
-.custom-marker {
-  @apply bg-transparent border-none;
-}
-
-.city-name-marker {
-  @apply inline-flex items-center gap-1 rounded-lg px-1.5 py-0.5 text-xs font-semibold shadow transition-all duration-150 whitespace-nowrap;
-}
-
-.city-name-marker:hover {
-  @apply bg-white/95 shadow-md scale-105;
-}
-
-.city-name-marker .city-name {
-  @apply text-white;
-}
-
-.city-name-marker .city-icons {
-  @apply text-[10px] ml-0.5;
-}
-
-.cluster-marker {
-  @apply flex items-center justify-center rounded-full font-bold text-white;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  font-size: 13px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+.maplibregl-popup-tip {
+  @apply hidden;
 }

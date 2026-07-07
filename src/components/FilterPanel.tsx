@@ -8,8 +8,6 @@ interface FilterPanelProps {
   onToggle: (region: string) => void
   cityVisibility: RegionVisibility
   onCityToggle: (region: string) => void
-  showLabels: boolean
-  onToggleLabels: () => void
   showCities: boolean
   onToggleCities: () => void
 }
@@ -19,8 +17,6 @@ export function FilterPanel({
   onToggle,
   cityVisibility,
   onCityToggle,
-  showLabels,
-  onToggleLabels,
   showCities,
   onToggleCities,
 }: FilterPanelProps) {
@@ -145,18 +141,6 @@ export function FilterPanel({
           </div>
         </>
       )}
-
-      <div className="mt-2.5 pt-2.5 border-t border-gold">
-        <label className="flex items-center cursor-pointer">
-          <input
-            type="checkbox"
-            className="mr-2"
-            checked={showLabels}
-            onChange={onToggleLabels}
-          />
-          <span className="text-brown-dark text-[13px]">지명 표시</span>
-        </label>
-      </div>
     </div>
   )
 }

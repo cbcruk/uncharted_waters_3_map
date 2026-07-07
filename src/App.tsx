@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { DiscoveryMap } from './components/DiscoveryMap'
+import { DiscoveryMap } from './components/discovery-map/discovery-map'
 import { FilterPanel } from './components/FilterPanel'
 import { MapTitle } from './components/MapTitle'
 import { regions } from './data/discoveries'
 import { cityRegions } from './data/cities'
 import type { RegionVisibility } from './types'
-import 'leaflet/dist/leaflet.css'
 import './App.css'
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
     return initial
   })
 
-  const [showLabels, setShowLabels] = useState(false)
   const [showCities, setShowCities] = useState(true)
 
   const handleToggle = (region: string) => {
@@ -47,7 +45,6 @@ function App() {
       <DiscoveryMap
         visibility={visibility}
         cityVisibility={cityVisibility}
-        showLabels={showLabels}
         showCities={showCities}
       />
       <MapTitle />
@@ -56,8 +53,6 @@ function App() {
         onToggle={handleToggle}
         cityVisibility={cityVisibility}
         onCityToggle={handleCityToggle}
-        showLabels={showLabels}
-        onToggleLabels={() => setShowLabels((prev) => !prev)}
         showCities={showCities}
         onToggleCities={() => setShowCities((prev) => !prev)}
       />

@@ -39,7 +39,7 @@ export function CityPopup({ city }: CityPopupProps) {
 
   return (
     <div>
-      <div className="text-lg font-bold text-brown-dark border-b-2 border-gold pb-1.5 mb-2.5">
+      <div className="text-lg font-bold text-brown-dark border-b-2 border-gold pb-1.5 mb-2.5 pr-6">
         {name}
       </div>
       <div className="text-brown-light text-xs mb-2">{region}</div>
