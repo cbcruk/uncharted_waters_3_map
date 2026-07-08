@@ -27,7 +27,7 @@ export function DiscoveryMap({
       localIdeographFontFamily="'Noto Serif KR', sans-serif"
       className="h-screen w-full"
     >
-      <MapControls position="top-left" />
+      <MapControls position="bottom-left" />
       <DiscoveryLayers
         visibility={visibility}
         onSelect={(idx, lng, lat) =>
