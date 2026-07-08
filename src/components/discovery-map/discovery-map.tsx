@@ -6,6 +6,7 @@ import { DiscoveryPopup } from '@/components/DiscoveryPopup'
 import { CityPopup } from '@/components/CityPopup'
 import { DiscoveryLayers } from './discovery-layers'
 import { CityLayer } from './city-layer'
+import { BasemapLabels } from './basemap-labels'
 import { MAP_CONFIG } from './discovery-map.constants'
 import type { ActivePopup, DiscoveryMapProps } from './discovery-map.types'
 
@@ -31,6 +32,7 @@ export function DiscoveryMap({
         position="bottom-left"
         className="[&>div]:border-border [&>div]:bg-surface/90 [&>div]:backdrop-blur-sm [&_button]:text-fg [&_button:not(:last-child)]:border-border [&_button:hover]:bg-surface-2"
       />
+      <BasemapLabels />
       <DiscoveryLayers
         visibility={visibility}
         onSelect={(idx, lng, lat) =>
