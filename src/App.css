@@ -11,12 +11,6 @@
   --color-link: #7dd3fc;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Noto Serif KR', Georgia, serif;
   background: #0b0f17;
