@@ -27,7 +27,10 @@ export function DiscoveryMap({
       localIdeographFontFamily="'Noto Serif KR', sans-serif"
       className="h-screen w-full"
     >
-      <MapControls position="bottom-left" />
+      <MapControls
+        position="bottom-left"
+        className="[&>div]:border-border [&>div]:bg-surface/90 [&>div]:backdrop-blur-sm [&_button]:text-fg [&_button:not(:last-child)]:border-border [&_button:hover]:bg-surface-2"
+      />
       <DiscoveryLayers
         visibility={visibility}
         onSelect={(idx, lng, lat) =>
