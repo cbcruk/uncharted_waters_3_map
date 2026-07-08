@@ -9,10 +9,28 @@ export interface DiscoveryFeatureProps {
 export interface CityFeatureProps {
   idx: number
   name: string
-  color: string
+  labelColor: string
 }
 
 const FALLBACK_CITY_COLOR = '#5a4a3a'
+
+/**
+ * Lightens a color toward white until it reaches a minimum perceived
+ * luminance, so region-colored text stays readable on the dark basemap.
+ * Colors already bright enough are returned unchanged.
+ */
+function brightenForDark(hex: string, targetLum = 178): string {
+  const m = hex.replace('#', '')
+  const r = parseInt(m.slice(0, 2), 16)
+  const g = parseInt(m.slice(2, 4), 16)
+  const b = parseInt(m.slice(4, 6), 16)
+  const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
+  if (lum >= targetLum) return hex
+  const t = (targetLum - lum) / (255 - lum)
+  const mix = (c: number) => Math.round(c + (255 - c) * t)
+  const toHex = (c: number) => mix(c).toString(16).padStart(2, '0')
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`
+}
 
 export function buildDiscoveryCollectionsByRegion(): Record<
   string,
@@ -55,7 +73,9 @@ export function buildCityCollection(
               properties: {
                 idx,
                 name: city.name,
-                color: cityRegionColors[city.region] || FALLBACK_CITY_COLOR,
+                labelColor: brightenForDark(
+                  cityRegionColors[city.region] || FALLBACK_CITY_COLOR,
+                ),
               },
             },
           ]

@@ -93,9 +93,10 @@ export function CityLayer({ cityVisibility, onSelect }: CityLayerProps) {
         'text-offset': [0, 0.4],
       },
       paint: {
-        'text-color': ['get', 'color'],
-        'text-halo-color': '#ffffff',
-        'text-halo-width': 1.5,
+        'text-color': ['get', 'labelColor'],
+        'text-halo-color': 'rgba(6, 8, 12, 0.9)',
+        'text-halo-width': 1.4,
+        'text-halo-blur': 0.4,
       },
     })
 
