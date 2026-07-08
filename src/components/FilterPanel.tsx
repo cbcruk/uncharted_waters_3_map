@@ -65,8 +65,13 @@ export function FilterPanel({
         </button>
       </div>
 
-      {activeTab === 'discovery' ? (
-        <>
+      <div className="grid">
+        <div
+          className={`[grid-area:1/1] ${
+            activeTab === 'discovery' ? '' : 'invisible pointer-events-none'
+          }`}
+          aria-hidden={activeTab !== 'discovery'}
+        >
           <div>
             {regions.map((region) => {
               const active = visibility[region]
@@ -107,9 +112,13 @@ export function FilterPanel({
             표시 중: <strong>{visibleDiscoveryCount}</strong> /{' '}
             {totalDiscoveryCount} 발견물
           </div>
-        </>
-      ) : (
-        <>
+        </div>
+        <div
+          className={`[grid-area:1/1] ${
+            activeTab === 'city' ? '' : 'invisible pointer-events-none'
+          }`}
+          aria-hidden={activeTab !== 'city'}
+        >
           <div className="mb-2.5 pb-2.5 border-b border-dashed border-border">
             <label className="flex items-center cursor-pointer">
               <input
@@ -172,8 +181,8 @@ export function FilterPanel({
           <div className="mt-4 pt-2.5 border-t border-border text-xs text-fg-muted">
             표시 중: <strong>{visibleCityCount}</strong> / {totalCityCount} 도시
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </div>
   )
 }
